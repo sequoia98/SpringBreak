@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SpringBreak</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .outer {
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+
+        .inner {
+            display: table-cell;     
+            vertical-align: middle;  
+            text-align: center;   
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            <h1>SpringBreak</h1><br>
+            <p>Jailbroken! :)</p>
+        </div>
+    </div>
+
+    <script>
+        window.kindle.messaging.sendStringMessage("com.lab126.winmgr", "vibrancyMode", "x");
+    </script>
+</body>
+</html>
