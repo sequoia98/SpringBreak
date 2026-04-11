@@ -21,7 +21,7 @@
         //Chromebar
         function update() {
             var chromebar = {
-                "appId": "com.lab126.store",
+                "appId": "com.lab126.fts",
                 "topNavBar": {
                     "template": "title",
                     "title": "SpringBreak",
@@ -37,6 +37,8 @@
 
             window.kindle.messaging.sendMessage("com.lab126.chromebar", "configureChrome", chromebar);
         };
+
+        update();
         window.kindle.appmgr.ongo = function () { update(); };
 
         //Message
