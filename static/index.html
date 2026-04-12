@@ -40,10 +40,12 @@
 
         update();
         window.kindle.appmgr.ongo = function () { update(); };
+        window.kindle.appmgr.start("com.lab126.booklet.home");
 
         //Message
-        window.kindle.messaging.sendStringMessage("com.lab126.winmgr", "vibrancyMode", "x");
-        window.kindle.appmgr.start("com.lab126.booklet.home");
+        setTimeout(function () {
+            window.kindle.messaging.sendStringMessage("com.lab126.winmgr", "vibrancyMode", "x");
+        }, 500); //To See Logs
     </script>
 </body>
 </html>
