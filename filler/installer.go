@@ -45,6 +45,10 @@ func cleanup(drive string) error {
 	};
 
 	os.Chdir(drive);
+
+	os.Remove(filepath.Join(drive, "jb.sh"));
+	os.Remove(filepath.Join(drive, "patchedUks.sqsh"));
+
 	return os.RemoveAll(filepath.Join(drive, ".active_content_sandbox"));
 };
 
@@ -137,16 +141,16 @@ func main() {
 	//Check For Cache
 	var err error;
 
-	local := filepath.Join(".", ".active_content_sandbox");
-	_, err = os.Stat(local);
-	if err != nil {
-		if os.IsNotExist(err) {
-			fmt.Printf("Error: SpringBreak Payload Not Found! Ensure .active_content_sandbox Is In The Same Directory as This Executable.");
-		} else {
-			fmt.Printf("Error: %v", err);
+	files := []string{".active_content_sandbox", "jb.sh", "patchedUks.sqsh"};
+	for _, file := range files {
+		if _, err = os.Stat(file); err != nil {
+			if os.IsNotExist(err) {
+				fmt.Printf("Error: Required File '%s' Not Found! Ensure It Is In The Same Directory as This Executable.", file);
+			} else {
+				fmt.Printf("Error: %v", err);
+			};
+			return;
 		};
-
-		return;
 	};
 
 	fmt.Print("SpringBreak\n");
@@ -213,6 +217,8 @@ func main() {
 		return;
 	};
 
+	os.Remove(filepath.Join(drive, "jb.sh"));
+	os.Remove(filepath.Join(drive, "patchedUks.sqsh"));
 	os.RemoveAll(filepath.Join(drive, ".active_content_sandbox"));
 
 	if err := filler(drive); err != nil {
@@ -223,6 +229,15 @@ func main() {
 	if err := copy(drive); err != nil {
 		fmt.Printf("Copy Error: %v\n", err);
 		return;
+	};
+
+	fmt.Printf("Copying Jailbreak Scripts...\n");
+	for _, file := range []string{"jb.sh", "patchedUks.sqsh"} {
+		target := filepath.Join(drive, file);
+		if err := helper(file, target); err != nil {
+			fmt.Printf("Error Copying %s: %v\n", file, err);
+			return;
+		};
 	};
 
 	fmt.Printf("Done! SpringBreak Preparation Complete. You Can Now Eject Your Kindle.\nOnce You Finish Jailbreaking, Re-Run This Utility.");
