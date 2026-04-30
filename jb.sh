@@ -13,7 +13,7 @@ set +e # If boot is halted stuff seriously goes wrong (actually we don't need th
 ###
 POS=1
 sb_log() {
-  echo "${1}" >> /mnt/us/nosb.log
+  echo "${1}" >> /mnt/us/springbreak.log
   eips 0 $POS "${1}"
   echo "${1}"
   POS=$((POS+1))
