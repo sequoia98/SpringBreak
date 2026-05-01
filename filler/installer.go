@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/deepakjois/gousbdrivedetector"
+	"github.com/penguins184/drivedetector/src"
 	"github.com/schollz/progressbar/v3"
 );
 
@@ -159,7 +159,7 @@ func main() {
 
 	var drives []string;
 	for {
-		drives, err = usbdrivedetector.Detect();
+		drives, err = drivedetector.Detect();
 		if err != nil {
 			fmt.Printf("\nError: %v\n", err);
 			return;
