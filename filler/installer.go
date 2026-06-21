@@ -5,6 +5,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strconv"
 	"time"
 
@@ -152,6 +153,10 @@ func main() {
 
 	fmt.Print("SpringBreak\n")
 	fmt.Print("===========\n")
+
+	if runtime.GOOS == "linux" {
+		fmt.Print("\nPsst... We Detected You're on Linux! You May Have to Mount the Kindle in your File Explorer First for It to Be Detected.")
+	}
 	fmt.Print("\nSearching For Devices...")
 
 	var drives []string
