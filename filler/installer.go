@@ -231,5 +231,5 @@ func main() {
 		return
 	}
 
-	fmt.Printf("Done! SpringBreak Preparation Complete. You Can Now Eject Your Kindle.\nOnce You Finish Jailbreaking, Re-Run This Utility.")
+	fmt.Printf("Done! SpringBreak Preparation Complete. You Can Now Eject Your Kindle.\nOnce You Finish Jailbreaking, *Re-Run This Utility*.")
 }
