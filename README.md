@@ -16,7 +16,7 @@ SpringBreak is a jailbreak for KT5, PW5(SE) on 5.19.2+, KT4/PW4 5.18.1.1.1.
 Because MacOS scares me:
 
 - Windows: `GOOS=windows GOARCH=amd64 go build -trimpath -o springbreak.exe installer.go`
-- Darwin:
+- Darwin (Build from Source):
     - `GOOS=darwin GOARCH=arm64 go build -trimpath -o springbreak-darwin-arm64 installer.go`
     - `GOOS=darwin GOARCH=amd64 go build -trimpath -o springbreak-darwin-amd64 installer.go`
     - `lipo -create -output springbreak-darwin springbreak-darwin-arm64 springbreak-darwin-amd64`
