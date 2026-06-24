@@ -1,7 +1,7 @@
 # This workflow will build a golang project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
 
-name: Go
+name: Build Linux
 
 on:
   push:
@@ -25,4 +25,4 @@ jobs:
       run: cd filler && GOOS=linux GOARCH=amd64 go build -trimpath -o springbreak-linux installer.go
 
     - name: Test
-      run: GOOS=linux GOARCH=amd64 go test -trimpath -o springbreak-linux installer.go
+      run: cd filler && GOOS=linux GOARCH=amd64 go test -trimpath -o springbreak-linux installer.go
