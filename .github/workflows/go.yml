@@ -22,7 +22,7 @@ jobs:
         go-version: '1.20'
 
     - name: Build
-      run: GOOS=linux GOARCH=amd64 go build -trimpath -o springbreak-linux installer.go
+      run: GOOS=linux GOARCH=amd64 go build -trimpath -o springbreak-linux filler/installer.go
 
     - name: Test
-      run: GOOS=linux GOARCH=amd64 go test -trimpath -o springbreak-linux installer.go
+      run: GOOS=linux GOARCH=amd64 go test -trimpath -o springbreak-linux filler/installer.go
